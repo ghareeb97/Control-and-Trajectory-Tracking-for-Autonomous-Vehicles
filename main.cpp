@@ -246,7 +246,10 @@ int main ()
   * TODO (Step 1): create pid (pid_steer) for steer command and initialize values
   **/
   PID pid_steer = PID();
-  pid_steer.Init(0.3, 0.00085, 0.3, 1.2, -1.2);
+//   pid_steer.Init(0.3, 0.00085, 0.3, 1.2, -1.2);
+//   pid_steer.Init(0.2, 0.00085, 0.3, 1.2, -1.2);
+//   pid_steer.Init(0.3, 0.00085, 0.2, 1.2, -1.2);
+  pid_steer.Init(0.3, 0.0007, 0.3, 1.2, -1.2);
 
   // initialize pid throttle
   /**
@@ -325,10 +328,14 @@ int main ()
           /**
           * TODO (step 3): compute the steer error (error_steer) from the position and the desired trajectory
           **/
-
+          
+          // Get the closest point to the current position
           int closest_pt_idx = closest_point(x_position, y_position, x_points, y_points);
+          // calculate the angle between the current position and the closest point
           double angle_desired = angle_between_points(x_position, y_position, x_points[closest_pt_idx], y_points[closest_pt_idx]);
-          error_steer = normalize(angle_desired - yaw);
+          // difference between the desired angle and the current angle
+          error_steer = normalize(angle_desired - yaw); // This used to adjust the steering of the car
+
 
           /**
           * TODO (step 3): uncomment these lines

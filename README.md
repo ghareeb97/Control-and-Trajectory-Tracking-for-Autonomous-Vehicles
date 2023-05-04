@@ -4,6 +4,14 @@
 following gif speed is x8 the original
  ![](control.gif)
 
+ **after Review**
+
+![](Control-after-review.gif)
+
+ **Comparison between first and second submission**
+
+second trial is on the right side
+![Alt text](compare.gif)
 ![](Steering.png)
 
 
