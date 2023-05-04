@@ -11,7 +11,9 @@ following gif speed is x8 the original
  **Comparison between first and second submission**
 
 second trial is on the right side
+
 ![Alt text](compare.gif)
+
 ![](Steering.png)
 
 
